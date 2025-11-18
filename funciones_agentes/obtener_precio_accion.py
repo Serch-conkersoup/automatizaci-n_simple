@@ -20,10 +20,10 @@ def obtener_precio_accion(driver, consulta):
         precio = driver.find_element(By.CSS_SELECTOR, "span[jsname='vWLAgc']").text
 
         # Obtener la divisa de la acción
-        divisa = 
+        divisa = driver.find_element(By.CSS_SELECTOR, "span[jsname='T3Us2d']").text
 
         # Obtener el ticker de la acción. Éste es el código que se usa para identificar la acción en la bolsa. Por ejemplo, el ticker de Apple es AAPL.
-        ticker = 
+        ticker = driver.find_element(By.CSS_SELECTOR, "span[aria-hidden='true']").text
         
         return f"{empresa} [{ticker}]  ${precio} {divisa.upper()}."
     except Exception as e:
